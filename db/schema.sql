@@ -12,16 +12,17 @@ CREATE TABLE menu(
 CREATE TABLE customer(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name varchar(70),
-    total_spend INT
+    total_spend INT DEFAULT 0,
 );
 
 CREATE TABLE orders
 (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     order_id int NOT NULL,
+    item_id int NOT NULL,
     customer_id int,
 	delivered BOOLEAN DEFAULT false,
-    FOREIGN KEY (order_id) REFERENCES menu(id),
+    FOREIGN KEY (item_id) REFERENCES menu(id),
     FOREIGN KEY (customer_id) REFERENCES customer(id)
 
 );
