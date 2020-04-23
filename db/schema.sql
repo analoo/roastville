@@ -12,7 +12,7 @@ CREATE TABLE menu(
 CREATE TABLE customer(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name varchar(70),
-    total_spend INT DEFAULT 0,
+    total_spend INT DEFAULT 0
 );
 
 CREATE TABLE orders

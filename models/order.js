@@ -1,6 +1,9 @@
 var orm = require("../config/orm.js");
 
 var order = {
+
+
+
     all: function (cb) {
         orm.all("orders", function (res) {
             cb(res)
