@@ -28,3 +28,15 @@ body{
     box-shadow: 10px 10px 5px grey;
 
 }
+
+#cashier{
+    width: 70px;
+}
+
+#table{
+    position: fixed;
+    bottom: 20%;
+    right: 33%;
+    width: 100px
+
+}

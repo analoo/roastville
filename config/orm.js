@@ -23,7 +23,7 @@ var orm = {
         var queryStr = "INSERT INTO " +table;
         queryStr+= " (";
         queryStr+= cols.toString();
-        queryStr+= "VALUES (";
+        queryStr+= ") VALUES (";
         queryStr+=getTheQs(vals.length);
         queryStr+= ") "
 

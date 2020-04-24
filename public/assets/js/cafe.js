@@ -3,9 +3,8 @@ $(function(){
         event.preventDefault();
 
         var newOrder = {
-            order_id = $("#order_id").val().trim(),
-            item_id = $("#item_id").val().trim(),
-            customer_id = $("#customer_id").val().trim()
+            item_id : $("#item-id").val().trim(),
+            customer_name : $("#customer-name").val().trim()
         };
 
         $.ajax("/api/orders", {

@@ -10,20 +10,12 @@ CREATE TABLE menu(
     time int NOT NULL
 );
 
-CREATE TABLE customer(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    customer varchar(70),
-    total_spend INT DEFAULT 0
-);
-
 CREATE TABLE orders
 (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    order_id int NOT NULL,
     item_id int NOT NULL,
-    customer_id int,
+    customer_name VARCHAR(10),
 	delivered BOOLEAN DEFAULT false,
-    FOREIGN KEY (item_id) REFERENCES menu(id),
-    FOREIGN KEY (customer_id) REFERENCES customer(id)
+    FOREIGN KEY (item_id) REFERENCES menu(id)
 
 );

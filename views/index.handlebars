@@ -24,24 +24,37 @@
 
     </div>
     <div class="sub-div" id="barista-panel">
+        <div id="order-form">
         <form class="create-form">
             <div class="form-group">
-                <label for="order">Order ID</label>
-                <input type="text" id="order-id" name="order_id">
-
                 <label for="it">Menu Item</label>
                 {{!-- figure out how to query menu to show this list --}}
                 <input type="text" id="item-id" name="item_id">
 
-                <label for="cust">Customer ID</label>
-                <input type="text" id="customer-id" name="customer_id">
+                <label for="cust">Customer Name</label>
+                <input type="text" id="customer-name" name="customer_name">
             </div>
-
             <button type="submit" id="add">Add Order</button>
-
         </form>
+        </div>
+        <div>
+            <h2> Barista </h2>
+            <img src="/assets/images_icons/cashier.png" alt="cashier" id="cashier"/>
+        </div>
     </div>
     <div class="sub-div" id="pickup-panel">
-
+            <img src="/assets/images_icons/table.png" alt="table" id="table"/>
     </div>
 </div>
+
+<div class="panel" id="right-panel">
+        <div class="sub-div" id="customer-panel">
+
+        </div>
+        <div class="sub-div" id="blank-panel">
+
+        </div>
+        <div class="sub-div" id="coffee-panel">
+
+        </div>
+    </div>
