@@ -14,7 +14,7 @@ router.get("/", function(req,res){
     })
 });
 
-router.post("/", function(req,res){
+router.post("/api/orders", function(req,res){
     order.create([
         "order_id", "item_id", "customer_id", "delivered"
     ], [req.body.order_id,req.body.item_id,req.body.customer_id,false

@@ -1,6 +1,6 @@
 <div class="panel" id="left-panel">
     <div class="sub-div" id="order-panel">
-        <h1>Orders</h1>
+        <h1>Pending Orders</h1>
         <table>
             {{#each orders}}
             <tr>
@@ -18,22 +18,30 @@
 
     </div>
 </div>
+<div class="panel" id="center-panel">
+    <h2>Take An Order</h2>
+    <div class="sub-div" id="cashier-panel">
 
+    </div>
+    <div class="sub-div" id="barista-panel">
+        <form class="create-form">
+            <div class="form-group">
+                <label for="order">Order ID</label>
+                <input type="text" id="order-id" name="order_id">
 
-<h2>Take An Order</h2>
-<form class="create-form">
-  <div class="form-group">
-    <label for="order">Order ID</label>
-    <input type="text" id="order-id" name="order_id">
+                <label for="it">Menu Item</label>
+                {{!-- figure out how to query menu to show this list --}}
+                <input type="text" id="item-id" name="item_id">
 
-    <label for="it">Menu Item</label>
-    {{!-- figure out how to query menu to show this list --}}
-    <input type="text" id="item-id" name="item_id">
-  
-  <label for="cust">Customer ID</label>
-    <input type="text" id="customer-id" name="customer_id">
-  </div>
+                <label for="cust">Customer ID</label>
+                <input type="text" id="customer-id" name="customer_id">
+            </div>
 
-  <button type="submit" id="add">Add Order</button>
- 
-</form>
+            <button type="submit" id="add">Add Order</button>
+
+        </form>
+    </div>
+    <div class="sub-div" id="pickup-panel">
+
+    </div>
+</div>
