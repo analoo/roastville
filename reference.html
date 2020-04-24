@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/assets/css/style.css" type="text/css" />
+    <script src="public/assets/js/cafe.js"></script>
+    <link rel="icon" href="public/assets/images_icons/coffee.png">
+    <title>Barista</title>
+</head>
+
+<body>
+    <div class="panel" id="left-panel">
+        <div class="sub-div" id="order-panel">
+            <table>
+                <td><button class="delivered" data-delivered="1"></button></td>
+                <td>Ana</td>
+                <td>5</td>
+                <td>Frapuccino</td>
+                <td><button class="add" data-id="{{id}}"> + </button></td>
+                <td><button class="delete" data-id="{{id}}"> - </button></td>
+                <td>Progress: <progress id="js-progressbar" class="uk-progress" value="10" max="100"></progress></td>
+            </table>
+        </div>
+    </div>
+    <div class="panel" id="center-panel">
+        <div class="sub-div" id="cashier-panel">
+
+        </div>
+        <div class="sub-div" id="barista-panel">
+
+        </div>
+        <div class="sub-div" id="pickup-panel">
+
+        </div>
+    </div>
+    <div class="panel" id="right-panel">
+        <div class="sub-div" id="customer-panel">
+
+        </div>
+        <div class="sub-div" id="blank-panel">
+
+        </div>
+        <div class="sub-div" id="coffee-panel">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

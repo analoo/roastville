@@ -1,0 +1,30 @@
+body{
+    background-color: teal;
+    background-image: url("../images_icons/cafe.jpg");
+    background-size: 400px;
+
+}
+
+.panel{
+    background-color: aquamarine;
+    border: solid 20px transparent;
+    padding: 20px;
+    width: 25%;
+    float: left;
+    margin: auto;
+    height: 80vh
+}
+#left-panel{
+    background-color: transparent;
+}
+
+#order-panel{
+    background-color: white;
+    width: 20%;
+    height: 80vh;
+    position: fixed;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px grey;
+
+}

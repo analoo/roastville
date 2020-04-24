@@ -5,13 +5,14 @@ USE barista_db;
 
 CREATE TABLE menu(
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name varchar(70) NOT NULL,
-    price decimal(10,2) NOT NULL
+    item varchar(70) NOT NULL,
+    price decimal(10,2) NOT NULL,
+    time int NOT NULL
 );
 
 CREATE TABLE customer(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name varchar(70),
+    customer varchar(70),
     total_spend INT DEFAULT 0
 );
 

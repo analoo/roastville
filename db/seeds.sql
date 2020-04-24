@@ -1,8 +1,8 @@
-INSERT INTO menu(name,price)
-VALUES("Latte", 5.00),("Capuccino", 5.50), ("Matcha Tea", 4.50), ("Drip Coffee", 3.00);
+INSERT INTO menu(item,price,time)
+VALUES("Latte", 5.00,3),("Capuccino", 5.50,2), ("Matcha Tea", 4.50,4), ("Drip Coffee", 3.00,10);
 
 
-INSERT INTO customer(name,total_spend)
+INSERT INTO customer(customer,total_spend)
 VALUES ("Tom", 0), ("Lisa", 0), ("Mark",0), ("Crystal", 0);
 
 INSERT INTO orders(order_id,item_id,customer_id,delivered)

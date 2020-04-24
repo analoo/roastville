@@ -12,7 +12,7 @@ function getTheQs(num){
 
 var orm = {
     all: function (table, cb) {
-        var queryStr = "SELECT * FROM " + tableInput + ";";
+        var queryStr = "SELECT * FROM " + table + ";";
         connection.query(queryStr, function (err, result) {
             if (err) throw err;
             cb(result)

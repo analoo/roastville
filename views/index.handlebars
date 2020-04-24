@@ -1,6 +1,39 @@
-<h1> Orders </h1>
+<div class="panel" id="left-panel">
+    <div class="sub-div" id="order-panel">
+        <h1>Orders</h1>
+        <table>
+            {{#each orders}}
+            <tr>
+                <td><button class="delivered" data-delivered="{{delivered}}"></button></td>
+                <td>{{customer}}</td>
+                <td>{{item}}</td>
+                <td>{{time}}</td>
+                <td><button class="add" data-id="{{id}}"> + </button></td>
+                <td><button class="delete" data-id="{{id}}"> - </button></td>
+                <td>Progress: <progress id="js-progressbar" class="uk-progress" value="10" max="100"></progress></td>
 
-<ul>
-    {{#each orders}}
-    
-</ul>
+            </tr>
+            {{/each}}
+        </table>
+
+    </div>
+</div>
+
+
+<h2>Take An Order</h2>
+<form class="create-form">
+  <div class="form-group">
+    <label for="order">Order ID</label>
+    <input type="text" id="order-id" name="order_id">
+
+    <label for="it">Menu Item</label>
+    {{!-- figure out how to query menu to show this list --}}
+    <input type="text" id="item-id" name="item_id">
+  
+  <label for="cust">Customer ID</label>
+    <input type="text" id="customer-id" name="customer_id">
+  </div>
+
+  <button type="submit" id="add">Add Order</button>
+ 
+</form>
