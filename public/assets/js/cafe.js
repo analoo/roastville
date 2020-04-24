@@ -11,9 +11,8 @@ $(function () {
             type: "POST",
             data: newOrder
         }).then(
-            function () {
-                console.log("Your order is in the queue");
-                location.reload();
+            function (data) {
+                console.log(data)
             }
         );
     });
@@ -30,7 +29,7 @@ $(function () {
         }).then(
             function () {
             console.log("You deleted this order");
-            location.reload();
+            $(`#row-${id}`).remove()
         });
     });
 });

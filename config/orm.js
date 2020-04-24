@@ -25,7 +25,9 @@ var orm = {
         queryStr+= cols.toString();
         queryStr+= ") VALUES (";
         queryStr+=getTheQs(vals.length);
-        queryStr+= ") "
+        queryStr+= "); "
+        // SELECT * FROM "+table+" WHERE ID = LAST_INSERT_ID()"
+        // need to figure out a way to return the most recent file.
 
         console.log(queryStr);
 

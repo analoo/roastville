@@ -9,7 +9,6 @@ router.get("/", function(req,res){
         var orderRend = {
             orders: data
         };
-        console.log(orderRend);
         res.render("index", orderRend);
     })
 });
@@ -20,7 +19,8 @@ router.post("/api/orders", function(req,res){
     ], [req.body.item_id,req.body.customer_name,false
     ],
         function(result){
-            console.log(result)
+            res.send(result);
+            console.log("Result:" + result)
     });
 });
 
@@ -29,6 +29,7 @@ router.delete("/api/orders/:id", function(req,res){
     console.log("condition", condition)
     
     order.delete(condition, function(result){
+        res.send();
         console.log(result)
     });
 });

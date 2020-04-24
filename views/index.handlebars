@@ -12,14 +12,14 @@
                 <th> Progress</th>
             </tr>
             {{#each orders}}
-            <tr>
+            <tr id="row-{{id}}">
                 <td><button class="delivered" data-delivered="{{delivered}}"></button></td>
                 <td>{{customer_name}}</td>
                 <td>{{item}}</td>
                 <td>{{time}}</td>
                 <td><button class="add" data-id="{{id}}"> Work on Order </button></td>
                 <td><button class="delete" data-id="{{id}}"> Delete Order </button></td>
-                <td>Progress: <progress id="js-progressbar" class="uk-progress" value="10" max="100"></progress></td>
+                <td><progress data-prog="{{id}}" class="progress-bar" value="30" max="100"></progress></td>
 
             </tr>
             {{/each}}
