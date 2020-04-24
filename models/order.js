@@ -3,7 +3,7 @@ var orm = require("../config/orm.js");
 var order = {
 
     all: function (cb) {
-        orm.all("orders INNER JOIN menu ON orders.item_id=menu.id", function (res) {
+        orm.all("orders INNER JOIN menu ON orders.item_id=menu.menu_id;", function (res) {
             cb(res)
         });
     },

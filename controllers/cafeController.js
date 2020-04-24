@@ -24,5 +24,14 @@ router.post("/api/orders", function(req,res){
     });
 });
 
+router.delete("/api/orders/:id", function(req,res){
+    var condition = " id = " + req.params.id;
+    console.log("condition", condition)
+    
+    order.delete(condition, function(result){
+        console.log(result)
+    });
+});
+
 
 module.exports = router;
