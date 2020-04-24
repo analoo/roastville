@@ -32,4 +32,27 @@ $(function () {
             $(`#row-${id}`).remove()
         });
     });
+
+    $(".add").on("click",function(){
+        event.preventDefault();
+        var id = $(this).data("id");
+        var time = $(`#prog-${id}`).data("time");
+
+        var progress = setInterval(() => {
+            time --
+            if(time == 0){
+                console.log(id)
+                $.ajax("/api/orders/" + id, {
+                    type: "PUT",
+                }).then(
+                    function () {console.log("You deleted this order");
+                    $(`#row-${id}`).remove()
+                });
+                clearInterval(progress)
+            }
+            
+        }, 1000);
+    })
+
+
 });

@@ -34,5 +34,15 @@ router.delete("/api/orders/:id", function(req,res){
     });
 });
 
+router.put("/api/orders/:id", function(req,res){
+    var condition = " id = " + req.params.id;
+
+    var vals = "delivered = true";
+    
+    order.update(vals,condition, function(result){
+        res.send();
+        console.log(result)
+    });
+});
 
 module.exports = router;

@@ -40,7 +40,7 @@ var orm = {
     update: function(table,valsInSql,condition, cb){
         var queryStr = "UPDATE " + table;
         queryStr+= " SET " + valsInSql;
-        queryStr+= " WHERE ";
+        queryStr+= " WHERE";
         queryStr += condition;
 
         console.log(queryStr)
