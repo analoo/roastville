@@ -9,7 +9,6 @@ router.get("/", function (req, res) {
         var orderRend = {
             orders: data
         };
-        console.log("This is what the get data looks like: " + JSON.stringify(orderRend))
         res.render("index", orderRend);
     })
 });
@@ -43,7 +42,6 @@ router.delete("/api/orders/:id", function (req, res) {
 
     order.delete(condition, function (result) {
         res.send();
-        console.log(result)
     });
 });
 
@@ -54,7 +52,6 @@ router.put("/api/orders/:id", function (req, res) {
 
     order.update(vals, condition, function (result) {
         res.send();
-        console.log(result)
     });
 });
 

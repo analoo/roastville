@@ -3,6 +3,8 @@
 $(function () {
     const name = ["Tania", "Cori", "Jon", "Carlos", "Jim", "Tara", "Marcos", "Mark", "Poppe", "Marta", "Ana", "Tom", "Juan", "Farley", "Rori", "Carl", "Kim"];
     const item = ["Latte", "Capuccino", "Matcha Tea", "Drip Coffee"];
+    const image = ["Latte", "Capuccino", "Matcha Tea", "Drip Coffee"];
+
 
     function rand(lst){
         return Math.floor(Math.random() * (lst.length-0+1)) 
@@ -57,24 +59,28 @@ $(function () {
             customer_name: $("#customer-name").val().trim()
         };
 
+        $("#item-id").val("")
+        $("#customer-name").val("")
+
         $.ajax("/api/orders", {
             type: "POST",
             data: newOrder
         }).then(
             function (data) {
-                console.log(data)
                 $("#orders-table").append(data)
             }
         );
     });
 
-    $(".delete").on("click", function () {
+    
+
+    $(document).on("click",".delete", function () {
         event.preventDefault();
         console.log("you clicked me!")
         var id = $(this).data("id");
-
+    
         console.log(id)
-
+    
         $.ajax("/api/orders/" + id, {
             type: "DELETE",
         }).then(
@@ -83,15 +89,18 @@ $(function () {
             $(`#row-${id}`).remove()
         });
     });
-
-    $(".add").on("click",function(){
+    
+    
+    $(document).on("click",".add",function(){
         event.preventDefault();
         var id = $(this).data("id");
         var time = $(`#prog-${id}`).data("time");
         var comp = 100/time;
         var incr=0;
-
-
+    
+        console.log("This is my id:" +id)
+    
+    
         var progress = setInterval(() => {
              incr+= comp;
             $(`#prog-${id}`).attr("value",incr)
@@ -113,7 +122,6 @@ $(function () {
             
         }, 1000);
     });
-
 
 
 
