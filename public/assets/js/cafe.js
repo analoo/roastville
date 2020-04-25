@@ -99,12 +99,9 @@ $(function () {
         var time = $(`#prog-${id}`).data("time");
         var comp = 100 / time;
         var incr = 0;
-        console.log("active is: "+active)
 
         if(active < 2){
             active++
-            console.log("active is: "+active)
-
             var progress = setInterval(() => {
                 incr += comp;
                 $(`#prog-${id}`).attr("value", incr)
@@ -117,7 +114,10 @@ $(function () {
                         function () {
                             $(`#row-${id}`).remove();
                             active--
-                            console.log("active is: "+active)  
+                            if(active < 2){
+                                $("#too-many").text("")
+                            }
+                            
     
                         });
                     clearInterval(progress)
@@ -126,7 +126,7 @@ $(function () {
         }
 
         else{
-            $(`row-${id}`).css("color", "grey")
+            $("#too-many").text("You can only work on two orders at once!")
 
         }
 
