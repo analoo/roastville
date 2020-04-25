@@ -3,11 +3,33 @@
 $(function () {
     const name = ["Tania", "Cori", "Jon", "Carlos", "Jim", "Tara", "Marcos", "Mark", "Poppe", "Marta", "Ana", "Tom", "Juan", "Farley", "Rori", "Carl", "Kim"];
     const item = ["Latte", "Capuccino", "Matcha Tea", "Drip Coffee"];
+
+    function rand(lst){
+        return Math.floor(Math.random() * (lst.length-0+1)) 
+    }
     
     $("#start-game").on("click", function(){
         event.preventDefault();
         $("#start").css("display","none");
         $("#mask").css("display","none");
+
+        var time = 1000;
+        var i =0;
+        
+
+        var gametime = setInterval(() => {
+            $("#time-rem").text(time);
+            $("#cust-name").text(name[rand(name)]);
+            $("#ord-name").text(item[rand(item)]);
+            i++;
+            time-=10;
+
+           if(time == 0){
+               clearInterval(gametime)
+           }
+           
+       }, 10000);
+
     });
 
     $(".create-form").on("submit", function () {
