@@ -1,28 +1,36 @@
 <div class="panel" id="left-panel">
     <div class="sub-div" id="order-panel">
-        <h2>Pending Orders</h2>
+        <h2>Current Queue</h2>
         <table id="orders-table">
             <tr>
-                <th> Status </th>
                 <th> Customer </th>
                 <th> Item </th>
                 <th> Time To Complete </th>
                 <th colspan="3"> Actions </th>
             </tr>
             {{#each orders}}
-            <tr id="row-{{id}}" class:"row">
-                <td><button class="delivered" data-delivered="{{delivered}}"></button></td>
-                <td>{{customer_name}}</td>
-                <td>{{item}}</td>
-                <td>{{time}}</td>
-                <td><button class="add" data-id="{{id}}"> Work on Order </button></td>
-                <td><button class="delete" data-id="{{id}}"> Delete Order </button></td>
-                <td><progress id="prog-{{id}}" data-time="{{time}}" class="progress-bar" value="30" max="100"></progress></td>
-
-            </tr>
+            {{#unless delivered}}
+            {{> cafe/cafe-block delivered=false}}
+            {{/unless}}
             {{/each}}
         </table>
+    </div>
 
+    <div class="sub-div" id="order-completed">
+        <h2>Completed Orders</h2>
+        <table id="orders-table">
+            <tr>
+                <th> Customer </th>
+                <th> Item </th>
+                <th> Price </th>
+
+            </tr>
+            {{#each orders}}
+            {{#if delivered}}
+            {{> cafe/cafe-block delivered=true}}
+            {{/if}}
+            {{/each}}
+        </table>
     </div>
 </div>
 <div class="panel" id="center-panel">
@@ -61,5 +69,16 @@
     </div>
     <div class="sub-div" id="pickup-panel">
 
+    </div>
+</div>
+
+<div class="panel" id="right-panel">
+    <div class="sub-div" id="menu">
+    {{#each menu}}
+        <tr>
+        <td>{{menu_id}}</td>
+        <td>{{item}}</td>
+        <td>{{price}}</td>
+    {{/each}}
     </div>
 </div>

@@ -1,0 +1,13 @@
+
+<tr id="row-{{id}}" class="row">
+    <td>{{customer_name}}</td>
+    <td>{{item}}</td>
+    {{#if delivered}}
+    <td>{{price}}</td>
+    {{else}}
+    <td>{{time}}</td>
+    <td><button class="add" data-id="{{id}}"> Work on Order </button></td>
+    <td><button class="delete" data-id="{{id}}"> Delete Order </button></td>
+    <td><progress id="prog-{{id}}" data-time="{{time}}" class="progress-bar" value="30" max="100"></progress></td>
+    {{/if}}
+</tr>

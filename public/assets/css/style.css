@@ -2,9 +2,22 @@ body{
     background-color: teal;
     background-image: url("../images_icons/cafe.jpg");
     background-size: 400px;
+    font-family: 'Roboto', sans-serif;
+
 
 }
 
+h1{    
+    font-family: 'Berkshire Swash', cursive;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+h2{
+    font-weight: 100;
+}
 .panel{
     background-color: aquamarine;
     border: solid 20px transparent;
@@ -23,22 +36,37 @@ body{
     background-color: pink;
 }
 
+#right-panel{
+    background-color: pink;
+    width: 15%;
+}
+
 
 
 #order-panel{
     background-color: white;
     width: 40%;
-    height: 80vh;
+    height: 40vh;
     position: fixed;
     z-index: 2;
     border-radius: 5px;
     box-shadow: 10px 10px 5px grey;
     text-align: center;
+}
 
-
+#order-completed{
+    background-color: white;
+    width: 40%;
+    height: 40vh;
+    position: fixed;
+    top: 50%;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px grey;
+    text-align: center;
 }
 button{
-    color: green;
+    background-color: grey;
 }
 
 #order-form{
@@ -70,6 +98,10 @@ button{
     background-color: brown;
 }
 
+th{
+    background-color: lightblue;
+}
+
 tr{
     line-height: 2;
     text-align: center;
@@ -77,5 +109,5 @@ tr{
 
 #orders-table{
     margin: 10px;
-    width: 100%;
+    width: 90%;
 }
