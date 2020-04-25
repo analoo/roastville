@@ -19,7 +19,6 @@ h2{
     font-weight: 100;
 }
 .panel{
-    background-color: aquamarine;
     border: solid 20px transparent;
     padding: 20px;
     width: 25%;
@@ -40,8 +39,10 @@ h2{
 }
 
 #right-panel{
-    background-color: pink;
+    background-color: #f8f8f8;
     width: 15%;
+    margin: 30px 10px 30px 10px;
+
 }
 
 
@@ -222,5 +223,14 @@ progress[value]::after{
     margin: auto;
     background-color: #f8f8f8;
 
+}
+.timer{
+    background-color: white;
+    height: 15vh;
+}
+#menu-list{
+    width: 100%;
+    background-color: white;
+    border: 0;
 }
 /* borrowed from  https://www.natashatherobot.com/speech-bubble-css/*/

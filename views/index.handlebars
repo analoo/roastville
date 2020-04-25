@@ -1,12 +1,14 @@
 <div id="mask">
-    
+
 
 </div>
 <div id="start">
     <h1 id="wlcome"> Welcome to Roastville</h1>
 
-    <div id="level"><h1>Level 1</h1></div>
-    
+    <div id="level">
+        <h1>Level 1</h1>
+    </div>
+
     <h2> How to Play </h2>
 
     <div id="directions">
@@ -16,11 +18,13 @@
         <p>Then, you need select which orders to work on</p>
         <p>At the end of your shift, you will see your earnings</p>
     </div>
-    
-    <br>
-        <p> If you think you have what it takes. Let's get started</p>
 
-    <button id="start-game"><h1> Start </h1></button>
+    <br>
+    <p> If you think you have what it takes. Let's get started</p>
+
+    <button id="start-game">
+        <h1> Start </h1>
+    </button>
 
 
 </div>
@@ -105,12 +109,48 @@
 </div>
 
 <div class="panel" id="right-panel">
-    <div class="sub-div" id="menu">
-        {{#each menu}}
+    <table id="menu-list">
+        <h2>Menu</h2>
         <tr>
-            <td>{{menu_id}}</td>
-            <td>{{item}}</td>
-            <td>{{price}}</td>
-            {{/each}}
+            <th> Id </th>
+            <th> Name </th>
+            <th> Price </th>
+        </tr>
+        <tr>
+            <td> 1 </td>
+            <td> Latte </td>
+            <td> $5 </td>
+        </tr>
+        <tr>
+            <td> 2 </td>
+            <td> Capuccino </td>
+            <td> $5.5 </td>
+        </tr>
+        <tr>
+            <td> 3 </td>
+            <td> Matcha Tea </td>
+            <td> $4.5 </td>
+        </tr>
+        <tr>
+            <td> 4 </td>
+            <td> Drip Coffee</td>
+            <td> $3 </td>
+        </tr>
+    </table>
+    <h2>Time Remaining</h2>
+
+    <div class="timer">
+        <h1 id="time-rem">
+
+        </h1>
+
+    </div>
+    <h2>Cash Earnings</h2>
+
+    <div class="timer">
+        <h1 id="money">
+
+        </h1>
+
     </div>
 </div>
