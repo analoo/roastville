@@ -149,7 +149,10 @@ tr{
     padding: 0;
     border: 0;
     vertical-align: middle;
+   
 }
+
+
 
 #add-button{
     height: 20px;
@@ -225,8 +228,10 @@ progress[value]::after{
 
 }
 .timer{
-    background-color: white;
-    height: 15vh;
+    height: 10vh;
+    text-align: center;
+    vertical-align: middle;
+
 }
 #menu-list{
     width: 100%;
