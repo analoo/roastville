@@ -6,8 +6,8 @@
     <td>{{price}}</td>
     {{else}}
     <td>{{time}}</td>
-    <td><button class="add" data-id="{{id}}"> Work on Order </button></td>
-    <td><button class="delete" data-id="{{id}}"> Delete Order </button></td>
-    <td><progress id="prog-{{id}}" data-time="{{time}}" class="progress-bar" value="30" max="100"></progress></td>
+    <td><img src="/assets/images_icons/start.png" class="add" id="add-button" data-id="{{id}}"/></td>
+    <td><img src="/assets/images_icons/delete.png" class="delete" id="delete-button" data-id="{{id}}"/></td>
+    <td><progress id="prog-{{id}}" data-time="{{time}}" class="progress-bar" value="0" max="100"></progress></td>
     {{/if}}
 </tr>
