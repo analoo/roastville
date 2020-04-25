@@ -1,7 +1,7 @@
 
 <tr id="row-{{id}}" class="row">
     <td>{{customer_name}}</td>
-    <td>{{item}}</td>
+    <td id="item-{{id}}" data-price={{price}}>{{item}}</td>
     {{#if delivered}}
     <td>{{price}}</td>
     {{else}}
