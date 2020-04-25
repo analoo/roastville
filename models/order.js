@@ -9,7 +9,7 @@ var order = {
     },
 
     one: function (condition,cb) {
-        orm.all("orders INNER JOIN menu ON orders.item_id=menu.menu_id;", condition,function (res) {
+        orm.one("orders INNER JOIN menu ON orders.item_id=menu.menu_id", condition,function (res) {
             cb(res)
         });
     },

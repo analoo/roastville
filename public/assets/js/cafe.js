@@ -63,6 +63,7 @@ $(function () {
         }).then(
             function (data) {
                 console.log(data)
+                $("#orders-table").append(data)
             }
         );
     });

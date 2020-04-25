@@ -9,6 +9,7 @@ router.get("/", function (req, res) {
         var orderRend = {
             orders: data
         };
+        console.log("This is what the get data looks like: " + JSON.stringify(orderRend))
         res.render("index", orderRend);
     })
 });
@@ -20,7 +21,17 @@ router.post("/api/orders", function (req, res) {
     ], function (result) {
         var condition = `id = ${result.insertId}`;
         order.one(condition, function (data) {
-            res.json(data)
+
+            res.render("partials/cafe/cafe-block", {
+                layout: false,
+                id: data[0].id,
+                item: data[0].item,
+                customer_name: data[0].customer_name,
+                delivered: data[0].delivered,
+                price: data[0].delivered,
+                time: data[0].time
+            });
+
         });
     });
 });
