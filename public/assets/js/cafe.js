@@ -7,33 +7,50 @@ $(function () {
     function rand(lst){
         return Math.floor(Math.random() * (lst.length-0+1)) 
     }
+
+    var current_order;
+    var earnings = 0;
+    var time = 100;
+
+    $("#time-rem").text(time);
+    $("#money").text(earnings)
+
+
     
     $("#start-game").on("click", function(){
         event.preventDefault();
         $("#start").css("display","none");
         $("#mask").css("display","none");
 
-        var time = 1000;
+        
         var i =0;
         
 
         var gametime = setInterval(() => {
+            time-=1;
             $("#time-rem").text(time);
-            $("#cust-name").text(name[rand(name)]);
-            $("#ord-name").text(item[rand(item)]);
-            i++;
-            time-=10;
 
            if(time == 0){
+            $("#time-rem").text(time);
                clearInterval(gametime)
+               clearInterval(customers)
            }
            
-       }, 10000);
+       }, 1000);
+
+       var customers = setInterval(() => {
+        current_order = item[rand(item)]
+        $("#cust-name").text(name[rand(name)]);
+        $("#ord-name").text(current_order);
+        i++;
+       
+   }, 8000);
 
     });
 
     $(".create-form").on("submit", function () {
         event.preventDefault();
+        console.log("Current order is: "+current_order)
 
         var newOrder = {
             item_id: $("#item-id").val().trim(),
@@ -83,8 +100,12 @@ $(function () {
                 $.ajax("/api/orders/" + id, {
                     type: "PUT",
                 }).then(
-                    function () {console.log("You deleted this order");
-                    $(`#row-${id}`).remove()
+                    function () {
+                        // earnings+= $(`#row-${id}`).data("price");
+                        // $("#money").text(earnings)
+                        $(`#row-${id}`).remove();
+                        
+                    
                 });
                 clearInterval(progress)
             }

@@ -19,6 +19,14 @@ var orm = {
         });
     },
 
+    one: function (table, condition, cb) {
+        var queryStr = "SELECT * FROM " + table + " where " + condition+";";
+        connection.query(queryStr, function (err, result) {
+            if (err) throw err;
+            cb(result)
+        });
+    },
+
     create: function(table,cols,vals,cb){
         var queryStr = "INSERT INTO " +table;
         queryStr+= " (";

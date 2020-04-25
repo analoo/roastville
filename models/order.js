@@ -8,6 +8,12 @@ var order = {
         });
     },
 
+    one: function (condition,cb) {
+        orm.all("orders INNER JOIN menu ON orders.item_id=menu.menu_id;", condition,function (res) {
+            cb(res)
+        });
+    },
+
     //  
     create: function (cols, vals, cb) {
         orm.create("orders", cols, vals, cb, function (res) {
