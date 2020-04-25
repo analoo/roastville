@@ -119,9 +119,6 @@ button{
     background-color: brown;
 }
 
-th{
-    background-color: lightblue;
-}
 
 tr{
     line-height: 2;
@@ -145,8 +142,23 @@ tr{
     height: 20px;
 }
 
+#timer{
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: middle;
+}
+
 #add-button{
     height: 20px;
+}
+
+th{
+    background-color: teal;
+    color:white;
+    vertical-align: middle;
+
 }
 
 input{
@@ -154,5 +166,61 @@ input{
     line-height: 2;
 }
 
+progress[value]::before{
+    background-color: teal;
+}
 
+progress[value]::after{
+    background-color: red;
+}
+
+#start{
+    width: 60vw;
+    height: 70vh;
+    position: fixed;
+    background-color: pink;
+    top: 10vh;
+    left: 20vw;
+    z-index: 5;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+#mask{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: white;
+    opacity: .8;
+    z-index: 3;
+    margin: 0 auto;
+
+}
+
+#level{
+    margin: auto 5px auto 5px;
+    color: white;
+    background-color: orange;
+}
+
+#start-game{
+    width: 120px;
+    color: white;
+    background-color: teal;
+    border-radius: 15px;
+
+
+}
+
+#directions{ 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 70%;
+    margin: auto;
+    background-color: #f8f8f8;
+
+}
 /* borrowed from  https://www.natashatherobot.com/speech-bubble-css/*/
