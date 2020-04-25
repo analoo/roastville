@@ -33,7 +33,7 @@ h2{
 }
 
 #center-panel{
-    background-color: pink;
+    background-color:white;
 }
 
 #right-panel{
@@ -78,16 +78,32 @@ button{
 
 #cashier{
     width: 30%;
+    position: relative;
+    left: 250px;
+    /* bottom: 25px; */
 }
 
 #customer{
     width: 20%;
+    float: left;
+}
+
+.speech-bubble {
+    background-color: #f8f8f8;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    float: left;
+    margin-left: 10px;
+
 }
 
 .table{
     height: 10px;
     background-color: brown;
     border-top: solid black 2px;
+    clear:both;
 
 }
 
@@ -111,3 +127,6 @@ tr{
     margin: 10px;
     width: 90%;
 }
+
+
+/* borrowed from  https://www.natashatherobot.com/speech-bubble-css/*/

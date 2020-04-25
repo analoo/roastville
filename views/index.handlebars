@@ -35,9 +35,14 @@
 </div>
 <div class="panel" id="center-panel">
     <div class="sub-div" id="order-area">
-        <h1> customers</h1>
         <div class="customer">
             <img src="/assets/images_icons/tech_bro.png" alt="customer" id="customer" />
+        </div>
+        <div class="customer-order">
+            <div class="speech-bubble">
+                Hi! I'm Tom! <br>
+                Cappucino Please!
+            </div>
         </div>
         <div class="table"></div>
         <div class="table"></div>
@@ -74,11 +79,11 @@
 
 <div class="panel" id="right-panel">
     <div class="sub-div" id="menu">
-    {{#each menu}}
+        {{#each menu}}
         <tr>
-        <td>{{menu_id}}</td>
-        <td>{{item}}</td>
-        <td>{{price}}</td>
-    {{/each}}
+            <td>{{menu_id}}</td>
+            <td>{{item}}</td>
+            <td>{{price}}</td>
+            {{/each}}
     </div>
 </div>
