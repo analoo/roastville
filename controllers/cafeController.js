@@ -13,13 +13,6 @@ router.get("/", function (req, res) {
         };
         res.render("index", menuRend);
     })
-
-    // order.all(function (data) {
-    //     var orderRend = {
-    //         orders: []
-    //     };
-    //     res.render("index", orderRend);
-    // })
 });
 
 router.post("/api/orders", function (req, res) {
@@ -59,6 +52,7 @@ router.delete("/api/orders", function (req, res) {
     order.delete(condition, function (result) {
         res.send();
     });
+
 });
 
 router.put("/api/orders/:id", function (req, res) {
@@ -67,8 +61,22 @@ router.put("/api/orders/:id", function (req, res) {
     var vals = "delivered = true";
 
     order.update(vals, condition, function (result) {
-        res.send();
+        order.one(condition, function (data) {
+
+            res.render("partials/cafe/cafe-block", {
+                layout: false,
+                id: data[0].id,
+                item: data[0].item,
+                customer_name: data[0].customer_name,
+                delivered: data[0].delivered,
+                price: data[0].price,
+                time: data[0].time
+            });
+    
+        });
     });
+
+    
 });
 
 module.exports = router;

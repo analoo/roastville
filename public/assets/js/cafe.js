@@ -163,8 +163,9 @@ $(function () {
 
                     $.ajax("/api/orders/" + id, {
                         type: "PUT",
-                    }).then(function () {
+                    }).then(function (data) {
                         $(`#row-${id}`).remove();
+                        $(data).insertAfter("#completed-table")
                         if (ordered.indexOf(item) === -1) {
                             $("#wrong-order").show();
                             setTimeout(function () { $("#wrong-order").hide(); }, 3000);
