@@ -1,7 +1,7 @@
 USE barista_db;
 
 INSERT INTO menu(item,price,time)
-VALUES("Latte", 5.00,3),("Capuccino", 5.50,2), ("Matcha Tea", 4.50,4), ("Drip Coffee", 3.00,10);
+VALUES("Latte", 5.00,3),("Cappuccino", 5.50,2), ("Matcha Tea", 4.50,4), ("Drip Coffee", 3.00,10);
 
 
 INSERT INTO orders(item_id,customer_name,delivered)

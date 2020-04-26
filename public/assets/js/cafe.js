@@ -3,7 +3,7 @@
 $(function () {
     // created initial variables to generate customers and their orders
     const name = ["Tania", "Cori", "Jon", "Carlos", "Jim", "Tara", "Marcos", "Mark", "Poppe", "Marta", "Ana", "Tom", "Juan", "Farley", "Rori", "Carl", "Kim"];
-    const item = ["Latte", "Capuccino", "Matcha Tea", "Drip Coffee"];
+    const item = ["Latte", "Cappuccino", "Matcha Tea", "Drip Coffee"];
     const image = ["/assets/images_icons/tech_bro.png", "/assets/images_icons/music_listener.png", "/assets/images_icons/cyclist.png"];
 
     // created fuction to help randomly generate name, item and image
@@ -11,7 +11,6 @@ $(function () {
         return Math.floor(Math.random() * (lst.length))
     }
 
-  
 
     // Initial values at page load
 
@@ -121,17 +120,17 @@ $(function () {
     $(document).on("click", ".delete", function () {
         event.preventDefault();
         var id = $(this).data("id");
-
+        
+        // makes a call to the delete api to remove record
         $.ajax("/api/orders/" + id, {
             type: "DELETE",
         }).then(
             function () {
                 $(`#row-${id}`).remove()
-                active--
             });
     });
 
-
+    // sets the event listener at the document level 
     $(document).on("click", ".add", function () {
         event.preventDefault();
 
@@ -139,12 +138,17 @@ $(function () {
         if (active < 2) {
             active++
             
-
             var id = $(this).data("id");
+            // hides the delete button associated with an order being processed
             $(`.delete[data-id = "${id}"]`).hide();
 
+            // sets the stage to be able do the progree bar
             var time = $(`#prog-${id}`).data("time");
+
+            // sets the stage to be able to check whether the item being worked on was ordered but hasn't been delivered
             var item = $(`#item-${id}`).text()
+
+            // sets the stage for being able to track earnings
             var order_price = $(`#item-${id}`).data("price")
 
             // Based on item's time to complete, progress bar is updated
@@ -166,17 +170,22 @@ $(function () {
                         type: "PUT",
                     }).then(function (data) {
                         $(`#row-${id}`).remove();
+
+                        // inserts the returned HTML on row 1
                         $(data).insertAfter("#completed-table tr:first")
 
-                        // $(row).insertAfter("#mainTable tr:first");
+                        // checks whether the order is in our active orders list
                         if (ordered.indexOf(item) === -1) {
+                            // shows an error message, and adds to list of completed items but does not increase earnings
                             $("#wrong-order").show();
                             setTimeout(function () { $("#wrong-order").hide(); }, 3000);
                         }
 
                         else {
+                            // removes item from active orders list, increases earnings by price of item
                             let val = ordered.indexOf(item)
                             ordered.splice(val, 1)
+                            // in the future I would love to do a second check against name, so if you get name right, you get tips
                             earnings += order_price;
                             $("#money").text(`$${earnings}`);
                         }

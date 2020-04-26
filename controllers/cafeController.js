@@ -5,7 +5,7 @@ var router = express.Router();
 var order = require("../models/order.js");
 var menu = require("../models/menu.js");
 
-
+// renders menu data
 router.get("/", function (req, res) {
     menu.all(function (data) {
         var menuRend = {
@@ -15,6 +15,8 @@ router.get("/", function (req, res) {
     })
 });
 
+
+// renders orders data
 router.post("/api/orders", function (req, res) {
     order.create([
         "item_id", "customer_name", "delivered"
@@ -23,6 +25,7 @@ router.post("/api/orders", function (req, res) {
         var condition = `id = ${result.insertId}`;
         order.one(condition, function (data) {
 
+            // returns an html file created from the partials file containing the data below
             res.render("partials/cafe/cafe-block", {
                 layout: false,
                 id: data[0].id,
@@ -62,6 +65,8 @@ router.put("/api/orders/:id", function (req, res) {
 
     order.update(vals, condition, function (result) {
         order.one(condition, function (data) {
+
+            // returns an html file created from the partials file containing the data below
 
             res.render("partials/cafe/cafe-block", {
                 layout: false,
