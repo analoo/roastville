@@ -1,6 +1,6 @@
 var express = require("express");
 
-var PORT = process.eventNames.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
