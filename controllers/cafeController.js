@@ -5,12 +5,14 @@ var router = express.Router();
 var order = require("../models/order.js");
 
 router.get("/", function (req, res) {
-    order.all(function (data) {
+
+
+    // order.all(function (data) {
         var orderRend = {
-            orders: data
+            orders: []
         };
         res.render("index", orderRend);
-    })
+    // })
 });
 
 router.post("/api/orders", function (req, res) {
@@ -27,7 +29,7 @@ router.post("/api/orders", function (req, res) {
                 item: data[0].item,
                 customer_name: data[0].customer_name,
                 delivered: data[0].delivered,
-                price: data[0].delivered,
+                price: data[0].price,
                 time: data[0].time
             });
 
@@ -38,7 +40,14 @@ router.post("/api/orders", function (req, res) {
 
 router.delete("/api/orders/:id", function (req, res) {
     var condition = " id = " + req.params.id;
-    console.log("condition", condition)
+
+    order.delete(condition, function (result) {
+        res.send();
+    });
+});
+
+router.delete("/api/orders", function (req, res) {
+    var condition = " true";
 
     order.delete(condition, function (result) {
         res.send();

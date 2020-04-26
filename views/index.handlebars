@@ -15,7 +15,8 @@
         <p>Today is your first day at Roastville!</p>
         <p>Your goal is to deliver as many orders as possible</p>
         <p>First, you need to take customer orders</p>
-        <p>Then, you need select which orders to work on</p>
+        <p>Then, you will select which orders to work on. You can only work on two orders at a time</p>
+        <p>If you create something that wasn't ordered you will not receive compensation</p>
         <p>At the end of your shift, you will see your earnings</p>
     </div>
 
@@ -92,11 +93,11 @@
         <div id="order-form">
             <form class="create-form">
                 <div class="form-group">
-                    <label for="it">Menu Item</label>
+                    <label for="it">Insert Menu ID:</label>
                     {{!-- figure out how to query menu to show this list --}}
                     <input type="text" id="item-id" name="item_id">
 
-                    <label for="cust">Customer Name</label>
+                    <label for="cust">Customer's Name: </label>
                     <input type="text" id="customer-name" name="customer_name" placeholder="x">
                 </div>
                 <button type="submit" id="add">Add Order</button>
@@ -104,8 +105,10 @@
         </div>
     </div>
     <div class="sub-div" id="client-messages">
-        <p id="too-many"></p>
-        <p id="wrong-order"></p>
+        <p id="too-many">You can only work on two orders at once!</p>
+        <p id="wrong-order">The item you created was not ordered!</p>
+        <p id="invalid">That's not a valid item on the menu</p>
+
 
     </div>
 </div>

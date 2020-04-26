@@ -35,8 +35,6 @@ var orm = {
         queryStr+=getTheQs(vals.length);
         queryStr+= "); "
 
-        console.log(queryStr);
-
         connection.query(queryStr, vals, function(err,result){
             if(err) throw err;
             cb(result);
@@ -49,8 +47,6 @@ var orm = {
         queryStr+= " WHERE";
         queryStr += condition;
 
-        console.log(queryStr)
-
         connection.query(queryStr, function(err,result){
             if(err) throw err;
             cb(result);
@@ -62,7 +58,6 @@ var orm = {
         queryStr+= " WHERE ";
         queryStr+= condition;
 
-        console.log(queryStr)
         connection.query(queryStr, function(err,result){
             if(err) throw err;
             cb(result);
