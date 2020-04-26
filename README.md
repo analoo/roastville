@@ -10,7 +10,7 @@ Lots of fun and a great way to make some money!
 
 ## Site Picture
 
-![site](assets/site_image.gif)
+![site](public/assets/images_icons/site_image.gif)
 
 ## Table of Contents
 
