@@ -1,7 +1,7 @@
 body{
     background-color: teal;
-    background-image: url("../images_icons/cafe.jpg");
-    background-size: 400px;
+    background-image: url("../images_icons/cute-cafe.jpg");
+    background-size: 100vh;
     font-family: 'Roboto', sans-serif;
 
 
@@ -33,6 +33,7 @@ h2{
 
 #center-panel{
     background-color:white;
+    opacity: .95;
     margin: 30px 10px 30px 10px;
 
 
@@ -40,6 +41,7 @@ h2{
 
 #right-panel{
     background-color: #f8f8f8;
+    opacity: .95;
     width: 15%;
     margin: 30px 10px 30px 10px;
 
@@ -49,6 +51,7 @@ h2{
 
 #order-panel{
     background-color: white;
+    opacity: .95;
     width: 40%;
     height: 40vh;
     position: fixed;
@@ -60,6 +63,7 @@ h2{
 
 #order-completed{
     background-color: white;
+    opacity: .95;
     width: 40%;
     height: 40vh;
     position: fixed;
@@ -95,7 +99,7 @@ button{
 
 .speech-bubble {
     background-color: #f8f8f8;
-    border: 1px solid #c8c8c8;
+    border: 1px solid pink;
     border-radius: 5px;
     text-align: center;
     width: 150px;
@@ -126,7 +130,7 @@ tr{
     text-align: center;
 }
 
-#orders-table{
+.orders-table{
     margin: 10px;
     width: 90%;
 }
@@ -170,17 +174,10 @@ input{
     line-height: 2;
 }
 
-progress[value]::before{
-    background-color: teal;
-}
-
-progress[value]::after{
-    background-color: red;
-}
 
 #start{
     width: 60vw;
-    height: 70vh;
+    height: 80vh;
     position: fixed;
     background-color: pink;
     top: 10vh;
@@ -215,14 +212,12 @@ progress[value]::after{
     color: white;
     background-color: teal;
     border-radius: 15px;
-
-
 }
 
 #directions{ 
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 70%;
+    width: 80%;
     margin: auto;
     background-color: #f8f8f8;
 

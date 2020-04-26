@@ -29,7 +29,7 @@ $(function () {
     $("#ord-name").text(current_order);
     $("#customer").attr("src", current_img);
     $("#time-rem").text(time);
-    $("#money").text(earnings)
+    $("#money").text(`$${earnings}`)
 
 
     $("#invalid").hide();
@@ -68,7 +68,7 @@ $(function () {
                 $("#time-rem").text(time);
                 clearInterval(gametime)
                 clearInterval(customers)
-                $("#start").html("<h1> GAME OVER <h1>").css("text-align", "center").css("vertical-align", "middle");
+                $("#start").html("<h1> GAME OVER </h1><br> <h2> Thank you for playing </h2> ").css("text-align", "center").css("vertical-align", "middle");
                 $("#start").css("display", "inline");
                 $("#mask").css("display", "inline");
             }
@@ -141,7 +141,8 @@ $(function () {
             
 
             var id = $(this).data("id");
-            $(".delete").data("id", id).hide();
+            $(`.delete[data-id = "${id}"]`).hide();
+
             var time = $(`#prog-${id}`).data("time");
             var item = $(`#item-${id}`).text()
             var order_price = $(`#item-${id}`).data("price")
@@ -165,7 +166,9 @@ $(function () {
                         type: "PUT",
                     }).then(function (data) {
                         $(`#row-${id}`).remove();
-                        $(data).insertAfter("#completed-table")
+                        $(data).insertAfter("#completed-table tr:first")
+
+                        // $(row).insertAfter("#mainTable tr:first");
                         if (ordered.indexOf(item) === -1) {
                             $("#wrong-order").show();
                             setTimeout(function () { $("#wrong-order").hide(); }, 3000);
@@ -175,7 +178,7 @@ $(function () {
                             let val = ordered.indexOf(item)
                             ordered.splice(val, 1)
                             earnings += order_price;
-                            $("#money").text(earnings);
+                            $("#money").text(`$${earnings}`);
                         }
                     })
                 };
