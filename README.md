@@ -100,8 +100,8 @@ router.post("/api/orders", function (req, res) {
 
 ## Acknowledgements
 In order to make a beautiful game, I needed cool icons. I used the Noun Project and found these images:
-by monkik: Cashier, Cycling, listening to music, working
-by Made: cafe
+- by monkik: Cashier, Cycling, listening to music, working
+- by Made: cafe
 
 
 ## Author

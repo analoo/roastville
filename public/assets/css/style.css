@@ -59,6 +59,7 @@ h2{
     border-radius: 5px;
     box-shadow: 0px 10px 10px grey;
     text-align: center;
+    overflow: scroll;
 }
 
 #order-completed{
@@ -72,6 +73,8 @@ h2{
     border-radius: 5px;
     box-shadow: 0px 10px 10px grey;
     text-align: center;
+    overflow: scroll;
+
 }
 button{
     background-color: grey;
