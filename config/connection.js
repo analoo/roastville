@@ -8,7 +8,7 @@ var mysql = require("mysql");
 //     database: "barista_db"
 //   });
 
-  var connection = mysql.createConnection(process.env.JASWDB_URL);
+  var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
   connection.connect(function(err) {
     if (err) {
