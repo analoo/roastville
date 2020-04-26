@@ -94,7 +94,7 @@ $(function () {
 
         // added data validation to keep the invalid API calls from going to mySql
 
-        if (item_id > 0 && item_id <= 4) {
+        if (item_id > 0 && item_id <= 4 && item_id.length == 1) {
             $.ajax("/api/orders", {
                 type: "POST",
                 data: newOrder

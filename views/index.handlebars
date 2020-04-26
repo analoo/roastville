@@ -40,11 +40,6 @@
                 <th> <img src="/assets/images_icons/timer.png" id="timer"> </th>
                 <th colspan="3"> Actions </th>
             </tr>
-            {{#each orders}}
-            {{#unless delivered}}
-            {{> cafe/cafe-block delivered=false}}
-            {{/unless}}
-            {{/each}}
         </table>
     </div>
 
@@ -55,13 +50,7 @@
                 <th> Customer </th>
                 <th> Item </th>
                 <th> Price </th>
-
             </tr>
-            {{#each orders}}
-            {{#if delivered}}
-            {{> cafe/cafe-block delivered=true}}
-            {{/if}}
-            {{/each}}
         </table>
     </div>
 </div>
@@ -121,26 +110,14 @@
             <th> Name </th>
             <th> Price </th>
         </tr>
+        
+        {{#each menu}}
         <tr>
-            <td> 1 </td>
-            <td> Latte </td>
-            <td> $5 </td>
-        </tr>
-        <tr>
-            <td> 2 </td>
-            <td> Capuccino </td>
-            <td> $5.5 </td>
-        </tr>
-        <tr>
-            <td> 3 </td>
-            <td> Matcha Tea </td>
-            <td> $4.5 </td>
-        </tr>
-        <tr>
-            <td> 4 </td>
-            <td> Drip Coffee</td>
-            <td> $3 </td>
-        </tr>
+        <td>{{menu_id}}</td>
+        <td>{{item}}</td>
+         <td>{{price}}</td>
+         </tr>
+        {{/each}}
     </table>
     <br>
     <hr>

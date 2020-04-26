@@ -3,15 +3,22 @@ var express = require("express");
 var router = express.Router();
 
 var order = require("../models/order.js");
+var menu = require("../models/menu.js");
+
 
 router.get("/", function (req, res) {
-
+    menu.all(function (data) {
+        var menuRend = {
+            menu: data
+        };
+        res.render("index", menuRend);
+    })
 
     // order.all(function (data) {
-        var orderRend = {
-            orders: []
-        };
-        res.render("index", orderRend);
+    //     var orderRend = {
+    //         orders: []
+    //     };
+    //     res.render("index", orderRend);
     // })
 });
 
